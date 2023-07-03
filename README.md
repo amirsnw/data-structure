@@ -12,10 +12,10 @@ Implementation is the same code that we write to execute the steps of the algori
 
 There can be several implementations for only one algorithm.
 There can be different implementations even for one step.
------------------------------------------------------------
-The fact is, there aren't just two sides to any issue, there's almost always 
-a range of responses, and "it depends" is almost always the right answer in any bug question.
------------------------------------------------------------
+
+**The fact is, there aren't just two sides to any issue, there's almost always 
+a range of responses, and "it depends" is almost always the right answer in any bug question.**
+
 In order to measure the optimality of an algorithm, we cannot draw conclusions based on the start and end time (due to hardware), so instead we look at the algorithm's execution steps and call this method time complexity.
 
 We have two types of complexity:
@@ -29,8 +29,8 @@ So, to compare the algorithms, we compare the worst case and scenario of one alg
 Another method of analysis can be how well each algorithm can be implemented on a larger scale.
 In fact, the higher the number of items, the lower the algorithm execution speed.
 
-Big O Notation is a way to express the complexity of the items that the algorithm has to work on.
------------------
+**Big O Notation is a way to express the complexity of the items that the algorithm has to work on.**
+
 The Big O types:
 O(1): called Constant
 O(logn): called Logarithmic
