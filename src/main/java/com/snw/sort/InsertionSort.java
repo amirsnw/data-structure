@@ -2,6 +2,8 @@ package com.snw.sort;
 
 import com.snw.arrays.MainArray;
 
+import java.util.Arrays;
+
 public class InsertionSort {
 
 	public static void main(String... args) {
@@ -10,16 +12,12 @@ public class InsertionSort {
 		int intArray[] = MainArray.createIntArray();
 
 		System.out.println("Unsorted array: ");
-		for (int i = 0; i < intArray.length; i++) {
-			System.out.println(intArray[i]);
-		}
+		System.out.println(Arrays.toString(intArray));
 
-		insertionRecursionSort(intArray);
+		insertionIterationSort(intArray);
 
-		System.out.println("\nInsertion sorted array: ");
-		for (int i = 0; i < intArray.length; i++) {
-			System.out.println(intArray[i]);
-		}
+		System.out.println("Insertion sorted array: ");
+		System.out.println(Arrays.toString(intArray));
 
 		System.out.println("\nThis algorithm will sort by partitions, ");
 		System.out.println("comparing the first non-partitioned ");
@@ -38,7 +36,8 @@ public class InsertionSort {
 		video40InsertionSortedRecursiveArray();
 	}
 
-	private static void insertionRecursionSort(int intArray[]) {
+	private static void insertionIterationSort(int intArray[]) {
+		System.out.println();
 		for (int unsortedPartitionIndex = 1; unsortedPartitionIndex < intArray.length; unsortedPartitionIndex++) {
 
 			int newElement = intArray[unsortedPartitionIndex];
@@ -49,26 +48,26 @@ public class InsertionSort {
 			}
 
 			intArray[i] = newElement;
+			System.out.println(Arrays.toString(intArray));
 		}
+		System.out.println();
 	}
 
 	private static void video40InsertionSortedRecursiveArray() {
 		System.out.println("::::: VIDEO 40 CHALLENGE ::::: ");
-		System.out.println("::::: INSERTION SORT WIRH RECURSION :::::  \n");
+		System.out.println("::::: INSERTION SORT WITH RECURSION :::::  \n");
 
 		int intArray[] = MainArray.createIntArray();
 
 		System.out.println("Unsorted array: ");
-		for (int i = 0; i < intArray.length; i++) {
-			System.out.println(intArray[i]);
-		}
+		System.out.println(Arrays.toString(intArray));
 
+		System.out.println();
 		insertionSortRecursive(intArray, intArray.length);
+		System.out.println();
 
-		System.out.println("\nInsertion sorted recursive array: ");
-		for (int i = 0; i < intArray.length; i++) {
-			System.out.println(intArray[i]);
-		}
+		System.out.println("Insertion sorted recursive array: ");
+		System.out.println(Arrays.toString(intArray));
 
 	}
 
@@ -87,5 +86,6 @@ public class InsertionSort {
 		}
 
 		intArray[i] = newElement;
+		System.out.println(Arrays.toString(intArray));
 	}
 }

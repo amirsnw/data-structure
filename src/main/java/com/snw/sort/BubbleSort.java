@@ -2,6 +2,8 @@ package com.snw.sort;
 
 import com.snw.arrays.MainArray;
 
+import java.util.Arrays;
+
 public class BubbleSort {
 
 	public static void main(String[] args) {
@@ -10,16 +12,12 @@ public class BubbleSort {
 		int[] intArray = MainArray.createIntArray();
 
 		System.out.println("Unsorted array: ");
-		for (int i = 0; i < intArray.length; i++) {
-			System.out.println(intArray[i]);
-		}
+		System.out.println(Arrays.toString(intArray));
 
 		sort(intArray);
 
-		System.out.println("\nBubble sorted array: ");
-		for (int i = 0; i < intArray.length; i++) {
-			System.out.println(intArray[i]);
-		}
+		System.out.println("Bubble sorted array: ");
+		System.out.println(Arrays.toString(intArray));
 
 		System.out.println("\nOne of the most inefficient algorithms for sorting.\n"
 				+ "Bubble sort is a stable algorithm, because it will preserve the order of \n"
@@ -30,33 +28,35 @@ public class BubbleSort {
 				+ "BubbleSort is seen by the numbers of 'fors' in the code, \n"
 				+ "if the collection grows, the number of steps will grow too.\n" 
 				+ "in-place algorithm so doesn't need a second array.\n"
-				+ "in-place algorithm so doesn't need a second array.\n"
 				+ "Two variables are used in the algorithm, so the required memory is not dependent\n"
 				+ "on the number of elements. \n"
 				+ "The mentioned implementation looks at the sorted partition as an optimization \n"
 				+ "factor of the algorithm, otherwise it would be non-optimal to iterate the whole \n"
 				+ "array every time.\n"
 				+ "Visualized Video: https://www.youtube.com/watch?v=Cq7SMsQBEUw\n"
-				+ "Big-O: O(N²);");
+				+ "Big-O: O(N^2);");
 	}
 
 	private static void sort(int[] intArray) {
+		System.out.println();
 		for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-			for (int j = 0; j < lastUnsortedIndex; j++) {
-				if (intArray[j] > intArray[j + 1]) {
-					swap(intArray, j, j + 1);
+			for (int i = 0; i < lastUnsortedIndex; i++) {
+				if (intArray[i] > intArray[i + 1]) {
+					swap(intArray, i, i + 1);
 				}
 			}
+			System.out.println(String.format("Step %d: ", intArray.length - lastUnsortedIndex) + Arrays.toString(intArray));
 		}
+		System.out.println();
 	}
 
-	public static void swap(int array[], int j, int jPlusOne) {
-		if (j == jPlusOne) {
+	public static void swap(int array[], int i, int iPlusOne) {
+		if (i == iPlusOne) {
 			return;
 		}
 
-		int temp = array[j];
-		array[j] = array[jPlusOne];
-		array[jPlusOne] = temp;
+		int temp = array[i];
+		array[i] = array[iPlusOne];
+		array[iPlusOne] = temp;
 	}
 }
